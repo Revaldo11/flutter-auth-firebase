@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_firebase/dimension.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +15,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    // text controller
+    final _emailController = TextEditingController(text: '');
+    final _passwordController = TextEditingController(text: '');
+
+    Future signIn() async {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+    }
+
+    @override
+    void dispose() {
+      _emailController.dispose();
+      _passwordController.dispose();
+      super.dispose();
+    }
+
     Widget header() {
       return Container(
         child: Column(
@@ -48,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       return Container(
         margin: EdgeInsets.only(top: 30),
         child: TextField(
+          controller: _emailController,
           decoration: InputDecoration(
             hintText: 'Email',
             fillColor: Colors.grey[200],
@@ -69,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
       return Container(
         margin: EdgeInsets.only(top: 16),
         child: TextField(
+          controller: _passwordController,
           decoration: InputDecoration(
             hintText: 'Password',
             fillColor: Colors.grey[200],
@@ -90,9 +111,7 @@ class _LoginPageState extends State<LoginPage> {
       return Column(
         children: [
           GestureDetector(
-            onTap: () {
-              debugPrint('Tapped Sign In');
-            },
+            onTap: signIn,
             child: Container(
               margin: EdgeInsets.only(top: 40),
               padding: EdgeInsets.all(20),
