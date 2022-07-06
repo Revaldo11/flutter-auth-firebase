@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "491228038827",
+    "project_id": "flutter-auth-28c53",
+    "storage_bucket": "flutter-auth-28c53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491228038827:android:4de008fae9f2c9a53499ee",
+        "android_client_info": {
+          "package_name": "com.revaldo.flutter_login_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491228038827-85pcgofnarqnp76tbap9e862i06jv64l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmfMOALPvKCoPtEPS9gDBn2-7NhQO2Z5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491228038827-85pcgofnarqnp76tbap9e862i06jv64l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
